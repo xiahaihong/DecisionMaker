@@ -1,6 +1,8 @@
 package com.example.decision.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +12,9 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.example.decision.R;
+import com.example.decision.controllers.Controllers;
 import com.example.decision.modules.CardClickListener;
+import com.example.decision.modules.CardLongClickListener;
 import com.example.decision.modules.OptionsCard;
 import com.example.decision.modules.OptionsCardHolder;
 
@@ -69,5 +73,9 @@ public class OptionsListViewAdapter extends BaseAdapter {
         CardClickListener listener = new CardClickListener(mContext, card);
         holder.mTitleView.setOnClickListener(listener);
         holder.mContentView.setOnClickListener(listener);
+
+        CardLongClickListener longClickListener = new CardLongClickListener(mContext, card);
+        holder.mTitleView.setOnLongClickListener(longClickListener);
+        holder.mContentView.setOnLongClickListener(longClickListener);
     }
 }

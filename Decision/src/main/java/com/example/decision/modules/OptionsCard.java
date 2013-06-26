@@ -24,8 +24,8 @@ public class OptionsCard implements Serializable{
         }
     }
 
-    public OptionsCard(String title, String content, List<String> itemList){
-        mID = UUID.randomUUID().toString();
+    public OptionsCard(String id, String title, String content, List<String> itemList){
+        mID = id;
         mTitle = title;
         mContent = content;
         mItemList = new ArrayList<String>();

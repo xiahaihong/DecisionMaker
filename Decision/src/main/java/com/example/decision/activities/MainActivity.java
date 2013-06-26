@@ -64,6 +64,7 @@ public class MainActivity extends Activity {
         mCardList.clear();
         ArrayList<ContentValues> cvList = Controllers.Instance().getmDbAdapter().getCards(0, -1);
         for (ContentValues cv : cvList){
+            String id = cv.getAsString(CardDbAdapter.COL_ID_TEXT_1);
             String title = cv.getAsString(CardDbAdapter.COL_TITLE_TEXT_1);
             String content = cv.getAsString(CardDbAdapter.COL_CONTENT_TEXT_1);
             String item = cv.getAsString(CardDbAdapter.COL_ITEMS_TEXT_1);
@@ -72,7 +73,7 @@ public class MainActivity extends Activity {
                 itemArray[i] = getResources().getString(R.string.choice) +  i + " : " + itemArray[i];
             }
             List<String> itemList = Arrays.asList(itemArray);
-            OptionsCard card = new OptionsCard(title, content, itemList);
+            OptionsCard card = new OptionsCard(id, title, content, itemList);
             mCardList.add(card);
         }
     }
