@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="D:\cygwin\home\haihong.xiahh\DecisionProject\Decision\src\main\assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="D:\cygwin\home\haihong.xiahh\DecisionProject\Decision\src\debug\assets" />
+    </dataSet>
+
+</merger>
