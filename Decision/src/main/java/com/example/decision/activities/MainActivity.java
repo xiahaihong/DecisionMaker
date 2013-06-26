@@ -54,11 +54,6 @@ public class MainActivity extends Activity {
     }
 
     private void initListView(){
-/*        for (int i = 0; i < 10; i++){
-            OptionsCard card = new OptionsCard();
-            mCardList.add(card);
-        }*/
-        // get from sql
         initCardList();
         mOptionsListView = (ListView) this.findViewById(R.id.options_listview);
         mOptionsAdapter = new OptionsListViewAdapter(MainActivity.this, mCardList);
@@ -73,6 +68,9 @@ public class MainActivity extends Activity {
             String content = cv.getAsString(CardDbAdapter.COL_CONTENT_TEXT_1);
             String item = cv.getAsString(CardDbAdapter.COL_ITEMS_TEXT_1);
             String[] itemArray  = item.split(AddSubjectActivity.SEPARATOR);
+            for (int i = 0; i < itemArray.length; i ++){
+                itemArray[i] = getResources().getString(R.string.choice) +  i + " : " + itemArray[i];
+            }
             List<String> itemList = Arrays.asList(itemArray);
             OptionsCard card = new OptionsCard(title, content, itemList);
             mCardList.add(card);

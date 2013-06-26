@@ -36,7 +36,7 @@ public class AddSubjectActivity extends Activity {
             @Override
             public void onClick(View view) {
                 EditText newView = new EditText(AddSubjectActivity.this);
-                newView.setFocusable(true);
+                newView.requestFocus();
                 mAddItemLayout.addView(newView);
             }
         });
@@ -49,19 +49,22 @@ public class AddSubjectActivity extends Activity {
         });
     }
     private void  saveSubjectToSql(){
-        String title = mTitleText.getText().toString();
-        String content = mContentText.getText().toString();
+        String title = mTitleText.getText().toString().trim();
+        String content = mContentText.getText().toString().trim();
+        String item = mItemText.getText().toString().trim();
         int itemCount = mAddItemLayout.getChildCount();
-        String item = mItemText.getText().toString();
         if (itemCount > 1){
             item += SEPARATOR;
         }
         for (int i = 1; i < itemCount; i++){
             try{
                 EditText v = (EditText)mAddItemLayout.getChildAt(i);
-                item += v.getText().toString();
-                if (i != itemCount -1){
-                    item += SEPARATOR;
+                String text = v.getText().toString().trim();
+                if (!"".equals(text)){
+                    item += text;
+                    if (i != itemCount -1){
+                        item += SEPARATOR;
+                    }
                 }
             } catch(Exception e){
                 e.printStackTrace();

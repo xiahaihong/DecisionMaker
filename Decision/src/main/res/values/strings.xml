@@ -4,5 +4,6 @@
     <string name="app_name">DecisionMaker</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="choice">选项</string>
 
 </resources>
