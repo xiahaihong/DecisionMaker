@@ -26,31 +26,37 @@
                 android:layout_below="@+id/add_title"
                 ></EditText>
             <LinearLayout
-                android:id="@+id/add_item_layout"
+                android:id="@+id/add_item_layout_text_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/add_content"
-                android:orientation="vertical"
-                >
-                <EditText
-                        android:id="@+id/add_item"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:hint="choice"
-                        android:maxLines="5"></EditText>
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/add_item_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <EditText
+                            android:id="@+id/add_item"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:hint="choice"
+                            android:maxLines="5"></EditText>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/add_item_btn"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="增加"
+                    android:layout_toRightOf="@+id/add_item_layout"></Button>
             </LinearLayout>
-            <Button
-                android:id="@+id/add_item_btn"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="增加"
-                android:layout_below="@+id/add_item_layout"></Button>
             <TextView
                 android:id="@+id/blank_view"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text=""
-                android:layout_below="@+id/add_item_btn"></TextView>
+                android:layout_below="@+id/add_item_layout_text_btn"></TextView>
             <Button
                 android:id="@+id/add_subject_btn"
                 android:layout_width="wrap_content"

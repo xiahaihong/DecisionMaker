@@ -41,7 +41,7 @@ public class CardActivity extends Activity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.options_card_layout);
+        setContentView(R.layout.card_detail_layout);
         initMessage();
         setView();
         initSensor();

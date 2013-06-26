@@ -35,5 +35,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/add_subject_layout"
+        android:cacheColorHint="@null"
         ></ListView>
 </RelativeLayout>

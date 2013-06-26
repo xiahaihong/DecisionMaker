@@ -1,18 +1,13 @@
 package com.example.decision.adapter;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import com.example.decision.R;
-import com.example.decision.controllers.Controllers;
 import com.example.decision.modules.CardClickListener;
 import com.example.decision.modules.CardLongClickListener;
 import com.example.decision.modules.OptionsCard;
@@ -56,9 +51,9 @@ public class OptionsListViewAdapter extends BaseAdapter {
         if (view == null){
             Log.d(TAG, "create view first time");
             cardHolder = new OptionsCardHolder();
-            view = mInflater.inflate(R.layout.options_card_layout, null);
-            cardHolder.mTitleView = (TextView) view.findViewById(R.id.card_title);
-            cardHolder.mContentView = (TextView) view.findViewById(R.id.card_content);
+            view = mInflater.inflate(R.layout.main_listview_card_item_layout, null);
+            cardHolder.mTitleView = (TextView) view.findViewById(R.id.main_card_title);
+            cardHolder.mContentView = (TextView) view.findViewById(R.id.main_card_content);
             view.setTag(cardHolder);
         } else {
             Log.d(TAG, "view already used");
