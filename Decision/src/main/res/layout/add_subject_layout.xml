@@ -3,51 +3,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-    <EditText
-        android:id="@+id/add_title"
+    <ScrollView
+        android:id="@+id/main_scrollview"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:hint="title"
-        ></EditText>
-    <EditText
-        android:id="@+id/add_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="content"
-        android:layout_below="@+id/add_title"
-        ></EditText>
-    <LinearLayout
-        android:id="@+id/add_item_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add_content"
-        android:orientation="vertical"
-        >
-        <LinearLayout
-            android:id="@+id/add_item_layout_default"
-            android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical">
+        <RelativeLayout
+            android:id="@+id/main_scroll_relative"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/add_content"
-            >
+            android:layout_width="match_parent">
             <EditText
-                android:id="@+id/add_item"
+                android:id="@+id/add_title"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:hint="item"
-                android:maxLines="5"></EditText>
+                android:hint="title"
+                ></EditText>
+            <EditText
+                android:id="@+id/add_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="desc"
+                android:layout_below="@+id/add_title"
+                ></EditText>
+            <LinearLayout
+                android:id="@+id/add_item_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_content"
+                android:orientation="vertical"
+                >
+                <EditText
+                        android:id="@+id/add_item"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:hint="choice"
+                        android:maxLines="5"></EditText>
+            </LinearLayout>
             <Button
                 android:id="@+id/add_item_btn"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="增加"></Button>
-            </LinearLayout>
-        </LinearLayout>
-
-    <Button
-        android:id="@+id/add_subject_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提交"
-        android:layout_below="@+id/add_item_layout"></Button>
-
+                android:text="增加"
+                android:layout_below="@+id/add_item_layout"></Button>
+            <TextView
+                android:id="@+id/blank_view"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text=""
+                android:layout_below="@+id/add_item_btn"></TextView>
+            <Button
+                android:id="@+id/add_subject_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提交"
+                android:layout_below="@+id/blank_view"></Button>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
