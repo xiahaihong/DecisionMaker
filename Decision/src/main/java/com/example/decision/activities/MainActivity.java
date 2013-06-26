@@ -12,6 +12,7 @@ import com.example.decision.R;
 import com.example.decision.adapter.CardDbAdapter;
 import com.example.decision.adapter.OptionsListViewAdapter;
 import com.example.decision.controllers.Controllers;
+import com.example.decision.modules.IOperationManager;
 import com.example.decision.modules.OptionsCard;
 import com.example.decision.utils.Constants;
 
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements IOperationManager {
 
     ListView mOptionsListView;
     OptionsListViewAdapter mOptionsAdapter;
@@ -84,5 +85,10 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
+
+    @Override
+    public void onOperationFinished() {
+        initCardList();
+        mOptionsAdapter.notifyDataSetChanged();
+    }
 }

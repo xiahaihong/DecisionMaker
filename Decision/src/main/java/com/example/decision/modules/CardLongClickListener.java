@@ -27,6 +27,7 @@ public class CardLongClickListener implements View.OnLongClickListener {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Controllers.Instance().getmDbAdapter().deleteCard(mCard.getmID());
+                ((IOperationManager) mContext).onOperationFinished();
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
